@@ -25,7 +25,7 @@ This project aims to build a Data Labeling Support System for training and evalu
 | Back-End & DevOps | Trương Minh Nhật   |
 
 ### Github Workflow
-<img src="./Resources/Github_Workflow.png" alt="Github workflow">
+<img src="./resources/Github_Workflow.png" alt="Github workflow">
 
 ## 🛠️ Technology Stack
 ### Front-End
