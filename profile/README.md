@@ -3,19 +3,14 @@
 We'll cover the following
 + [🎯 Project Overview & Goals](#🎯-project-overview-goals)
 + [🧑‍💻 Team Roles & Responsibilities](#🧑‍💻-team-roles-responsibilities)
-+ [ 🛠️Technology Stack](#🛠️-technology-stack)
++ [ 🛠️ Technology Stack](#🛠️-technology-stack)
 + [🏗️ System Architecture](#🏗️-system-architecture)
-+ [🌊 Warranty Workflow](#🌊-warranty-workflow)
++ [🏷️ Labeling Data Workflow](#🏷️-labeling-data-workflow)
 + [🎨 Database Design](#🎨-database-design)
 + [📚 Document References](#📚-document-references)
 
 ## 🎯 Project Overview & Goals
-ELV Warranty Management System helps local service staff handle warranty requests efficiently and transparently. It allows them to record customer issues, verify warranty eligibility, and submit claims directly to the manufacturer. The system tracks the status of each request—from submission and inspection to approval and replacement—ensuring quick resolution and accurate documentation. By digitizing the entire process, local staff can reduce paperwork, improve communication with the manufacturer, and deliver faster, more reliable service to customers.
-
-Goal:
-+ Digitize the warranty workflow to reduce manual paperwork.
-+ Improve response time for warranty approvals.
-+ Provide transparency for both service centers and the manufacturer.
+This project aims to build a Data Labeling Support System for training and evaluating machine learning models. The system supports multiple labeling tasks, such as identifying objects in images, drawing bounding boxes around objects, and segmenting object regions. Its goal is to manage the entire data labeling lifecycle, from project creation and task assignment to labeling, quality review, and data export, ensuring high-quality labeled datasets that improve the accuracy and reliability of machine learning models.
 
 <img src="./Resources/logo.png" alt="logo">
 
@@ -23,11 +18,11 @@ Goal:
 ### Team Structure
 | Role              | Name / Placeholder |
 | ------------------|:------------------:|
-| Front-End Dev     | Quốc Thái          |
-| Front-End Dev     | Thế Anh            |
-| Back-End Dev      | Huy Vũ             |
-| Back-End Dev      | Kim Ngân           |
-| Back-End Dev      | Trương Minh Nhật   |
+| Front-End & BA    | Quốc Thái          |
+| Front-End & BA    | Thế Anh            |
+| Back-End          | Huy Vũ             |
+| Back-End          | Kim Ngân           |
+| Back-End & DevOps | Trương Minh Nhật   |
 
 ### Github Workflow
 <img src="./Resources/Github_Workflow.png" alt="Github workflow">
@@ -82,31 +77,19 @@ Goal:
 [ File Storage (Local / S3 / MinIO) ]
 ```
 
-## 🌊 Warranty Workflow
-1. Local Staff logs a new warranty claim → fills in customer, vehicle, and defect details.
-2. Backend validates claim, assigns claim ID, stores data, and uploads related files.
-3. Manufacturer Reviewer checks eligibility and approves/rejects the request.
-4. System updates claim status and notifies the local staff.
-Service Center receives replacement parts or reimbursement.
+## 🏷️ Labeling Data Workflow
+1. Project Manager creates a labeling project and uploads raw data (images, text, audio, or video).
+
+2. The system validates the dataset, assigns task IDs, and distributes labeling tasks to annotators.
+
+3. Annotators perform labeling tasks (e.g., classification, bounding boxes, or segmentation) following defined guidelines.
+
+4. Reviewer checks label quality and approves, requests revisions, or rejects the annotations.
+
+5. The system updates labeling status, tracks progress, and exports the verified labeled data for training and evaluating AI models.
 
 ## 🎨 Database Design
-Our system will have total 15 Entities:
-
-+ Users: User management and authorization
-+ Customer: Customer information
-+ CustomerVehicle: Customer vehicle information
-+ Campaign: A voluntary, non-safety-related action, often for a technical update or a less serious issue. 
-+ CampaignType: Recall/Service
-+ ServiceCenter: A service center have many users
-+ WarrantyPolicy: Warranty policy for each part
-+ WarrantyClaim: Received claim vehicles
-+ Report: A Claim/Campaign report
-+ ReportType: Type of warranty report
-+ WorkOrder: Tasks information for SC Technician
-+ VehicleParts: Parts from customer vehicle
-+ PartItem: Parts detail information
-+ Parts: Parts information
-+ Inventory: Parts management
+Our system will have total none Entities:
 
 ## 📚 Document References
 ### DevOps & Deployment
